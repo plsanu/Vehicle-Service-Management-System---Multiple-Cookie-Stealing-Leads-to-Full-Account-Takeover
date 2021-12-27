@@ -12,8 +12,8 @@ Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Acc
 ### CVE : 
 ### Google Dork: N/A
 ### Reference: 
-https://www.plsanu.com/bludit-3-13-1-categories-stored-cross-site-scripting-xss
-https://github.com/plsanu/Bludit-3.13.1-Categories-Stored-Cross-Site-Scripting-XSS
+- https://www.plsanu.com/vehicle-service-management-system-multiple-cookie-stealing-leads-to-full-account-takeover/
+- https://github.com/plsanu/Vehicle-Service-Management-System-Multiple-Cookie-Stealing-Leads-to-Full-Account-Takeover
 
 ## 1. Vehicle Service Management System - 'MyAccount' (/admin/?page=user)
 
