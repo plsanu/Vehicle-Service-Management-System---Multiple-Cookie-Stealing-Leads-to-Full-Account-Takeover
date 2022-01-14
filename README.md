@@ -1,23 +1,20 @@
-# Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Account Takeover
-Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Account Takeover
+# CVE-2021-46067
 
 ### Exploit Title: Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Account Takeover
-### Date: 29/12/2021
-### Exploit Author: P.L.Sanu
-### Exploit Author Website: https://www.plsanu.com
-### Vendor Homepage: https://www.sourcecodester.com
-### Software Link: https://www.sourcecodester.com/php/14972/vehicle-service-management-system-php-free-source-code.html
-### Version: <= 1.0
-### Tested on: Windows 10
-### CVE : 
-### Google Dork: N/A
+### Exploit Author: <a href="https://www.plsanu.com">P.L.Sanu</a>
+### CVE: CVE-2021-46067
+### CVSS: 9.8 CRITICAL
 ### Reference: 
-- https://www.plsanu.com/vehicle-service-management-system-multiple-cookie-stealing-leads-to-full-account-takeover/
-- https://github.com/plsanu/Vehicle-Service-Management-System-Multiple-Cookie-Stealing-Leads-to-Full-Account-Takeover
+- https://www.plsanu.com/vehicle-service-management-system-multiple-cookie-stealing-leads-to-full-account-takeover
+- https://nvd.nist.gov/vuln/detail/CVE-2021-46067
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46067
 
-## 1. Vehicle Service Management System - 'MyAccount' (/admin/?page=user)
+### Description:
+In Vehicle Service Management System 1.0 an attacker can steal the cookies leading to Full Account Takeover.
 
-### Steps to Reproduce:
+### 1. Vehicle Service Management System - 'MyAccount' (/admin/?page=user)
+
+### Exploit:
 1. Login to the admin panel http://localhost/vehicle_service/admin
 2. Navigate to My Account section http://localhost/vehicle_service/admin/?page=user
 3. Generate the Webhook URL - https://webhook.site
@@ -45,9 +42,9 @@ Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Acc
 13. Now access the admin panel http://localhost/vehicle_service/admin
 14. Successfully loggedin to the account. Account Takeover Successful.
 
-## 2. Vehicle Service Management System - 'User List' (/admin/?page=user/manage_user)
+### 2. Vehicle Service Management System - 'User List' (/admin/?page=user/manage_user)
 
-### Steps to Reproduce:
+### Exploit:
 1. Login to the admin panel http://localhost/vehicle_service/admin
 2. Navigate to User List section and click on Create New button.
 3. Generate the Webhook URL - https://webhook.site
@@ -75,9 +72,9 @@ Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Acc
 13. Now access the admin panel http://localhost/vehicle_service/admin
 14. Successfully loggedin to the account. Account Takeover Successful.
 
-## 3. Vehicle Service Management System - 'Settings-System Logo' (/admin/?page=system_info)
+### 3. Vehicle Service Management System - 'Settings-System Logo' (/admin/?page=system_info)
 
-### Steps to Reproduce:
+### Exploit:
 1. Login to the admin panel http://localhost/vehicle_service/admin
 2. Navigate to Settings section http://localhost/vehicle_service/admin/?page=system_info
 3. Generate the Webhook URL - https://webhook.site
@@ -105,9 +102,9 @@ Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Acc
 13. Now access the admin panel http://localhost/vehicle_service/admin
 14. Successfully loggedin to the account. Account Takeover Successful.
 
-## 4. Vehicle Service Management System - 'Settings-Website Cover' (/admin/?page=system_info)
+### 4. Vehicle Service Management System - 'Settings-Website Cover' (/admin/?page=system_info)
 
-### Steps to Reproduce:
+### Exploit:
 1. Login to the admin panel http://localhost/vehicle_service/admin
 2. Navigate to Settings section http://localhost/vehicle_service/admin/?page=system_info
 3. Generate the Webhook URL - https://webhook.site
@@ -134,3 +131,9 @@ Vehicle Service Management System - 'Multiple' Cookie Stealing Leads to Full Acc
 12. Check the cookie values and change the PHPSESSID value to copied PHPSESSID value.
 13. Now access the admin panel http://localhost/vehicle_service/admin
 14. Successfully loggedin to the account. Account Takeover Successful.
+
+### Impact:
+An attacker upload malicious html file it redirects to the third party website and cookies are exposed in the request. It leads to Full Account Takeover.
+
+### Mitigation:
+It is recommended to validate the file upload functionality and Perform Secondary Checks in the session.
